@@ -1,0 +1,147 @@
+body {
+    background: url("/images/bg-nav.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* nav {
+    width: 100%;
+} */
+
+.logo {
+    width: 500px;
+    height: 150px;
+}
+
+.event {
+    background: #fd8419;
+    color: black;
+    padding: 0 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+main .first {
+    /* background: rgb(253,216,25);
+    background: linear-gradient(165deg, rgba(253,216,25,1) 0%, rgba(252,24,24,1) 100%); */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 50px 50px;
+    flex-direction: column;
+    border-radius: 40px 40px 200px 40px;
+    -webkit-border-radius: 40px 40px 200px 40px;
+    -moz-border-radius: 40px 40px 200px 40px;
+    -ms-border-radius: 40px 40px 200px 40px;
+    -o-border-radius: 40px 40px 200px 40px;
+}
+
+.describe {
+    color: white;
+}
+
+.describe h1 {
+    font-size: 100px;
+}
+
+.describe h2 {
+    font-size: 40px;
+}
+
+p {
+    font-family: prompt;
+    font-size: 15px;
+}
+
+button {
+    margin-left: 0;
+    background: rgba(243, 243, 243, 0.2);
+}
+
+.sponsor {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background: rgba(253,216,25, 1);
+    padding: 50px;
+    gap: 50px;
+}
+
+/* .join-sponsor {
+    padding: 50px;
+} */
+
+.uni-sponsor {
+    margin: 10px 50px;
+    width: 200px;
+}
+
+.documentation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20px;
+    color: white;
+}
+
+.video-foto {
+    display: grid;
+    gap: 10px;
+    place-items: center;
+}
+
+iframe {
+    width: 80%;
+    height: 600px;
+}
+
+.foto {
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.foto img {
+    width: 500px;
+    aspect-ratio: 3/2;
+}
+
+footer {
+    margin: 0;
+}
+
+.awal {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    place-items: center;
+    margin: 0px 80px;
+}
+
+.logo-new {
+    width: 200px;
+}
+
+button:hover {
+    background: #fd8419;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+}
+
+@media screen and (max-width: 576px) {
+    body {
+        background-position: center;
+    }
+    .logo {
+        width: 250px;
+        height: 75px;
+    }
+}
