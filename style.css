@@ -1,5 +1,5 @@
 body {
-    background: url("/images/bg-nav.jpg") no-repeat;
+    background: url("./images/bg-nav.jpg") no-repeat;
     background-size: cover;
     width: 100%;
     padding: 0;
