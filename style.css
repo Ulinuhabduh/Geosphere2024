@@ -67,7 +67,7 @@ button {
     width: 100%;
     display: grid;
     place-items: center;
-    background: rgba(253,216,25, 1);
+    background: #F9DD3F;
     padding: 50px;
     gap: 50px;
 }

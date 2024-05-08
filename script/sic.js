@@ -77,17 +77,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const navbar = document.querySelector(".navigasi")
-
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 50) {
-      // Atur nilai scroll sesuai kebutuhan
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  });
-});

@@ -1,0 +1,348 @@
+body {
+  color: black;
+  /* background: black; */
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.logo {
+  width: 100%;
+  width: 300px;
+  height: 90px;
+}
+
+#navigasi {
+  list-style-type: none;
+  padding-inline: 5px;
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigasi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+#navigasi .navigasi:hover {
+  background: #fd8419;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.navigasi a {
+  width: initial;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.navigasi a:hover {
+  color: white;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main-logo {
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(100px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    height: 80dvh;
+    /* padding: 0px 12.5%; */
+    box-sizing: border-box;
+}
+
+.grid-2 {
+  padding-left: 50px;
+  grid-column: 1;
+}
+
+.logo-seismic {
+  width: 400px;
+}
+
+.grid-1 {
+  margin: auto;
+  grid-column: 2;
+}
+
+.grid-child button {
+  width: 25%;
+}
+
+
+span {
+    color: rgb(199, 42, 42);
+}
+
+p span {
+    /* color: rgb(199, 42, 42); */
+    color: red;
+    font-weight: 600;
+}
+
+.what_is {
+    margin-top: 50px;
+    color: black;
+    /* background-color: #393E46;  */
+    /* background: #8E2735; */
+    width: 100%;
+
+}
+
+.what_is_child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    max-height: 200px;
+    position: relative;
+    color: rgba(255, 255, 255, 0);
+    /*background: linear-gradient(to right, #EEEEEE, #3498db);
+    *//*background: #1D2B53;
+    */font-size: 1.2rem;
+    padding: 10px 50px 20px;
+    box-sizing: border-box;
+    border-radius:1px;
+    -webkit-border-radius:1px;
+    -moz-border-radius:1px;
+    -ms-border-radius:1px;
+    -o-border-radius:1px;
+}
+
+.what_is_child h2 {
+    align-self: center;
+}
+
+.what_is_child p {
+  color: black;
+}
+
+.show-more-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #3498db;
+  color: #ecf0f1;
+  cursor: pointer;
+}
+
+.show-less-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  background-color: #3498db;
+    color: #ecf0f1;
+    cursor: pointer;
+}
+
+.timeline {
+    color: black;
+    border-radius: 20px;
+    margin: 50px auto;
+    padding: 0 100px;
+    box-sizing: border-box;
+    height: 80dvh;
+    display: grid;
+    place-items: center;
+    width: 80%;
+    /* background: linear-gradient(to right, #EEEEEE, #3498db); */
+    /* background-color: #7E2553; */
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+/* #head-timeline {
+    color: #FAEF5D;
+} */
+
+.timeline-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+}
+
+
+.timeline-child h2 {
+    color: #FAEF5D;
+    align-self: center;
+}
+
+.timeline ul {
+    font-size: 1.2rem;
+}
+
+
+.requirement {
+    border-radius: 20px;
+    margin: auto;
+    padding: 0 50px;
+    box-sizing: border-box;
+    height: 100dvh;
+    display: grid;
+    place-items: center;
+    width: 80%;
+    /* background: linear-gradient(to left, #f3f1f1, #3498db); */
+    /* background: #1D2B53; */
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.requirement h4 {
+    font-weight: bolder;
+}
+
+.requirement ul {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.facilities {
+    border-radius: 100px;
+    margin: 50px auto;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    height: 80dvh;
+    display: grid;
+    place-items: center;
+    width: 50%;
+    /* background: #3498db69; */
+    /* background: #B21E4B; */
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+
+#head-facilities {
+    color: #FAEF5D;
+}
+
+#facilities-1 ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+
+#facilities-1 ul li {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* untuk membuat span berada di tengah */
+    text-align: center;
+    flex: 0 0 calc(33.33% - 20px); /* Mengatur lebar setiap item menjadi 33.33% minus margin */
+    margin: 10px;
+    /* display: flex;
+    flex-direction: row; */
+}
+
+#facilities-1 ul li span {
+  margin-top: 5px; /* untuk memberi jarak antara gambar dan teks */
+  /* color: white; */
+}
+
+#facil {
+    text-transform: uppercase;
+    text-decoration: dotted;
+}
+
+.hadiah {
+    border-radius: 10px;
+    margin: 50px auto;
+    /* padding: 10px 10px; */
+    box-sizing: border-box;
+    height: 80dvh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    place-items: center;
+    width: 80%;
+    /*background: linear-gradient(to left, #f3f1f1, #3498db);*/
+    /* background: #7E2553; */
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.prize {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-style: double;
+    border-width: 1rem;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 50px;
+    color: #7E2553;
+    background-color: #FAEF5D;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+.phone {
+    display: flex;
+    justify-content: center;
+}
+
+
+footer {
+    margin: 0;
+}
+
+.awal {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    place-items: center;
+    margin: 0px 80px;
+}
+
+.logo-new {
+    width: 200px;
+}

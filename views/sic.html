@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Event | Geosphere</title>
-    <link rel="icon" href="/images/LOGO G.png" type="image/x-icon">
+    <title>Seismic Interpretation Competition | Geosphere</title>
+    <link rel="icon" href="/images/logo-sic.png" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -18,7 +18,7 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="/css/event.css">
+    <link rel="stylesheet" href="/css/sic.css">
 
   </head>
 
@@ -26,44 +26,186 @@
 
     <div class="article">
 
-      <aside>
-        <div>
+      <aside >
+        <div id="logo">
           <img class="logo" src="/images/Logo Geosphere 2024.PNG" alt="">
         </div>
   
-        <ul>
-          <li>
-            <a href="/views/siswa.html">Geolympic</a>
+        <ul id="navigasi">
+          <li class="navigasi">
+            <a href="/views/geoolympic.html">GeoOlympic</a>
           </li>
-          <li>
+          <li class="navigasi">
             <a href="/views/sic.html">SIC</a>
           </li>
-          <li>
-            <a href="/views/geotraining.html">Geotrain</a>
+          <li class="navigasi">
+            <a href="/views/geotraining.html">Geotraining</a>
           </li>
-          <li>
+          <li class="navigasi">
             <a href="/views/gtalk.html">Gtalk</a>
           </li>
-          <li>
+          <li class="navigasi">
             <a href="/views/geolog.html">Geolog</a>
           </li>
         </ul>
 
-        <hr color="black" width="50%" size="8%">
-
-        <div class="d-flex justify-content-center align-items-end kembali">
-          <a class="btn border-light bg-black text-white btn-kembali" href="/index.html">Kembali</a>
-        </div>
+        <hr>
 
       </aside>
-      <main>
-        jferjfirjfifj
+
+      <main class="fw-bold">
+        <div class=" main-logo">
+        <div class="grid-2">
+          <h1 class="text-black"><span>S</span>eismic <span>I</span>nterpretation <span>C</span>ompetition</h1>
+          <h3 class="text-primary">"Beyond Boundaries: Seismic Exploration, Limitless Discoveries!"</h3>
+          <p class="welcome text-black">Welcome to the exhilarating Geoolympic: Seismic Interpretation competition, where seismic exploration meets the art of data interpretation!
+          </p>
+          <p class="text-info fw-bolder fs-4 text-decoration-underline">Guidebook dan Registrasi SIC</p>
+          <div class="grid-child">
+            <button class="btn btn-primary p-2 fs-5" id="guidebook">Guidebook</button>
+            <button onclick="redirect('regis_maha')" class="btn btn-success p-2 fs-5" id="">Registrasi</button>
+          </div>
+        </div>
+        <div class="grid-1">
+          <img src="../images/logo-sic.png" alt="" class="logo-seismic">
+        </div>
+        <div class="gradient-overlay"></div>
+      </div>
+
+      <div class="what_is">
+        <div class="what_is_child">
+          <h2 class="fw-bolder text-danger">🔎 What is ?</h2>
+          <p>Seismic Interpretation Competition is a thrilling journey into the world of geophysics, specifically <span>focusing on seismic data processing</span>. Teams will be presented with real-world seismic datasets, and participants will utilize their expertise to analyze and interpret this valuable information to unlock the Earth's geological secrets.</p>
+
+          <h2 class="fw-bolder text-danger">🤝 Team-Based Competition</h2>
+          <p>To foster collaboration and teamwork, the competition is structured with a team-based approach. <span>Each team must consist of 3 members</span>. Together, you will synergize your skills and knowledge to tackle the seismic challenges and vie for the coveted title of Geoolympic champions!</p>
+
+          <h2 class="fw-bolder text-danger">💼 Confidentiality of Data</h2>
+          <p>We prioritize the utmost security and confidentiality of the data involved in the competition. Rest assured that all information shared and data provided during the Geoolympic: Seismic Interpretation <span>will be handled with the utmost care and kept strictly confidential</span>.</p>
+        </div>
+      </div>
+
+      <div class="timeline" id="timeline">
+          <div>
+            <h2 class="fw-bolder text-center text-info" id="head-timeline">TIMELINE</h2>
+            <p class="text-center text-white">For more details, please refer to the guidebook</p>
+          </div>
+          <div class="timeline-child">
+            <h2 class="fw-bolder text-info"><span><img src="/regis.png" alt=""></span> Registrasi</h2>
+            <ul>
+
+              <li>Batch 1 : 15 Juli - 22 Juli 2024</li>
+
+              <li>Batch 2 : 23 Juli - 4 Agustus 2024</li>
+
+              <li>Batch 3 : 5 Agustus - 11 Agustus 2024</li>
+
+            </ul>
+
+            <h2 class="fw-bolder text-info"><span><img src="/fight.png" alt=""></span> Preliminary</h2>
+            <ul>
+              
+              <li>Case Release : 11 Agustus 2024</li>
+
+              <li class="text-danger fw-bolder" >Abstract Submission : 25 Agustus 2024</li>
+
+              <li>Final Pass Announcement : 1 September 2024</li>
+
+            </ul>
+
+            <h2 class="fw-bolder text-info"><span><img src="/presentation.png" alt=""></span> Final Presentation</h2>
+            <ul>
+              
+              <li>Power Point Submission : 29 September 2024</li>
+
+              <li>Technical Meeting : 4 Oktober 2024</li>
+
+              <li class="text-danger fw-bolder">Final Presentation : 6 Oktober 2024</li>
+
+            </ul>
+          </div>
+      </div>
+        
+
+      <div class="requirement">
+
+        <div>
+          <h2 class="fw-bolder text-center text-success">REQUIREMENT</h2>
+          <p class="text-center">For more details, please refer to the guidebook</p>
+        </div>
+
+        <div>
+          <h4 class="text-start">The participants of SIC 2024 must fulfill the requirements below :</h4>
+
+          <ul>
+            <li>Participants are university / equivalent level students in Indonesia as evidenced by a student card.</li>
+            <li>Participants are in the form of a team consisting of 3 people (maximum) and come from the same university.</li>
+            <li>Participants can register SI through .... according to the date that has been set.</li>
+            <li>Participants are required to complete registration and registration fees set by the committee.</li>
+            <li>There are 2 stages in the Seismic Interpretation Competition: Preliminary and Final Presentation.</li>
+            <li>Only 5 teams will qualify for the final round.</li>
+            <li>Document submission and presentation using Indonesian language</li>
+            <li>Plagiarism will be disqualified</li>
+          </ul>
+        </div> 
+      </div>
+
+
+      <div class="hadiah">
+
+        <div class="logo-prize">
+          <img src="../images/gears.png" alt="">
+        </div>
+
+        <div class="prize">
+          <h1 class="">Total Prize SIC 2024</h1>
+
+          <h3>7 Milion Rupiah</h3>
+        </div>
+      </div>
+
       </main>
 
-
     </div>
-    <footer>
-      <!-- place footer here -->
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-white">
+      <div class="awal">
+        <div class="logo-footer">
+          <img class="logo-new" src="../images/LOGO G.png" alt="">
+          <p class="w-50">"Empowering Oil & Gas Exploration for Energy Sustainability in Indonesia"</p>
+        </div>
+        <div class="contact">
+          <h4>Contact Us Through</h4>
+          <p>WhatsApp: 081 234 567 890</p>
+          <p>WhatsApp: 081 234 567 890</p>
+          <p>Email</p>
+          <p><a class="text-decoration-none" href="https://www.instagram.com/geosphereits?igsh=MTloc3hvcngzdDZiYw==">Instagram</a></p>
+          <p><a class="text-decoration-none" href="https://www.linkedin.com/company/geosphere-its/">Linkedin</a></p>
+        </div>
+        <div class="about">
+          <h4>About</h4>
+          <p>About Us</p>
+          <p>Meet our Team</p>
+          <p>Merchandise</p>
+        </div>
+        <div class="event-1">
+          <h4>Event</h4>
+          <p>SIT</p>
+          <p>LOG</p>
+          <p>SIC</p>
+          <p>Geolympic</p>
+          <p>Gtalk!</p>
+          <p><a class="text-decoration-none" href="../index.html">Home</a></p>
+        </div>
+      </div>
+      <div class="tengah">        
+      
+        <hr>
+      </div>
+      <div class="end">
+        <p>Created by Website Development Team Geopshere 2024</p>
+      </div>
     </footer>
     <!-- Bootstrap JavaScript Libraries -->
     <script
@@ -77,5 +219,7 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+
+    <script src="../script/sic.js"></script>
   </body>
 </html>
