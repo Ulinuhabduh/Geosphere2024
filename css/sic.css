@@ -181,42 +181,10 @@ p span {
 }
 
 .timeline {
-    color: black;
-    border-radius: 20px;
-    margin: 50px auto;
-    padding: 0 100px;
     box-sizing: border-box;
-    height: 80dvh;
-    display: grid;
-    place-items: center;
-    width: 80%;
-    /* background: linear-gradient(to right, #EEEEEE, #3498db); */
-    /* background-color: #7E2553; */
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-}
+    margin-top: 50px;
+  }
 
-/* #head-timeline {
-    color: #FAEF5D;
-} */
-
-.timeline-child {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: auto;
-}
-
-
-.timeline-child h2 {
-    color: #FAEF5D;
-    align-self: center;
-}
-
-.timeline ul {
-    font-size: 1.2rem;
-}
 
 
 .requirement {
@@ -243,56 +211,6 @@ p span {
 .requirement ul {
     font-size: 1.5rem;
     color: black;
-}
-
-.facilities {
-    border-radius: 100px;
-    margin: 50px auto;
-    padding: 10px 50px;
-    box-sizing: border-box;
-    height: 80dvh;
-    display: grid;
-    place-items: center;
-    width: 50%;
-    /* background: #3498db69; */
-    /* background: #B21E4B; */
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    -ms-border-radius: 100px;
-    -o-border-radius: 100px;
-}
-
-#head-facilities {
-    color: #FAEF5D;
-}
-
-#facilities-1 ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-}
-
-
-#facilities-1 ul li {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* untuk membuat span berada di tengah */
-    text-align: center;
-    flex: 0 0 calc(33.33% - 20px); /* Mengatur lebar setiap item menjadi 33.33% minus margin */
-    margin: 10px;
-    /* display: flex;
-    flex-direction: row; */
-}
-
-#facilities-1 ul li span {
-  margin-top: 5px; /* untuk memberi jarak antara gambar dan teks */
-  /* color: white; */
-}
-
-#facil {
-    text-transform: uppercase;
-    text-decoration: dotted;
 }
 
 .hadiah {
@@ -341,10 +259,14 @@ footer {
 }
 
 .awal {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    place-items: center;
+    gap: 50px;
+    display: flex;
     margin: 0px 80px;
+}
+
+.end {
+  display: flex;
+  margin: 0 80px;
 }
 
 .logo-new {
@@ -408,9 +330,9 @@ footer {
     font-size: 15px;
   }
 
-  .timeline {
-    display: none;
-  }
+  /* .timeline {
+    ;
+  } */
 
   .requirement {
     display: flex;
@@ -442,6 +364,30 @@ footer {
   }
 
   footer {
+    padding: 0;
+    margin: 0;
+    background: #ceccc0;
+  }
+
+  .awal {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .logo-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  
+
+  .end {
+    margin: 0 10px;
+  }
+
+  .contact, .about, .event-1 {
     display: none;
   }
 }
