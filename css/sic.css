@@ -12,7 +12,6 @@ aside {
 #logo {
   display: flex;
   justify-content: center;
-  
 }
 
 .logo {
@@ -63,6 +62,7 @@ aside {
   color: white;
 }
 
+/* Main Section */
 
 main {
   display: flex;
@@ -75,12 +75,10 @@ main {
 
 .main-logo {
     color: rgb(255, 255, 255);
-    backdrop-filter: blur(100px);
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-content: center;
     height: 80dvh;
-    /* padding: 0px 12.5%; */
     box-sizing: border-box;
 }
 
@@ -96,6 +94,15 @@ main {
 .grid-1 {
   margin: auto;
   grid-column: 2;
+}
+
+.welcome {
+  font-size: 12px;
+}
+
+.grid-child {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .grid-child button {
@@ -292,14 +299,11 @@ p span {
     border-radius: 10px;
     margin: 50px auto;
     /* padding: 10px 10px; */
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     height: 80dvh;
     display: grid;
-    grid-template-columns: 1fr 3fr;
     place-items: center;
     width: 80%;
-    /*background: linear-gradient(to left, #f3f1f1, #3498db);*/
-    /* background: #7E2553; */
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -345,4 +349,99 @@ footer {
 
 .logo-new {
     width: 200px;
+}
+
+@media screen and (max-width: 576px) {
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #navigasi {
+    display: none;
+  }
+  
+  
+  .main-logo {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+  }
+
+  .grid-1 img {
+    width: 100%;
+  }
+
+  .grid-2 {
+    padding: 5px;
+  }
+
+  .grid-2 h2 {
+    font-size: 20px;
+  }
+
+  .grid-2 h3 {
+    font-size: 10px;
+  }
+
+  .grid-child button {
+    font-size: 10px;
+  }
+
+  .welcome {
+    width: 100%;
+    font-size: 10px;
+  }
+
+
+  .what_is_child {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    width: 90%;
+  }
+
+  .what_is_child h2 {
+    font-size: 15px;
+  }
+
+  .timeline {
+    display: none;
+  }
+
+  .requirement {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    margin-top: 20px;
+  }
+
+  .requirement div h2 {
+    font-size: 20px;
+  }
+
+  .requirement div p {
+    font-size: 10px;
+  }
+
+  .requirement div h4 {
+    font-size: 10px;
+  }
+
+  .requirement div ul li {
+    font-size: 8px;
+  }
+
+  .hadiah {
+    height: fit-content;
+    width: 100%;
+  }
+
+  footer {
+    display: none;
+  }
 }
