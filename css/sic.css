@@ -215,8 +215,6 @@ p span {
 .hadiah {
     border-radius: 10px;
     margin: 50px auto;
-    /* padding: 10px 10px; */
-    /* box-sizing: border-box; */
     display: grid;
     place-items: center;
     width: 80%;
