@@ -181,10 +181,14 @@ p span {
 }
 
 .timeline {
+    width: 100%;
     box-sizing: border-box;
     margin-top: 50px;
   }
 
+.timeline div img {
+  width: 100%;
+}
 
 
 .requirement {
