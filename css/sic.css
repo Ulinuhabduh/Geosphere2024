@@ -1,7 +1,8 @@
-body {
+/* body {
   color: black;
-  /* background: black; */
-}
+  background: rgb(238, 236, 236);
+} */
+
 aside {
   display: flex;
   flex-direction: column;
@@ -116,7 +117,7 @@ span {
 
 p span {
     /* color: rgb(199, 42, 42); */
-    color: red;
+    color: rgb(209, 0, 0);
     font-weight: 600;
 }
 
@@ -181,7 +182,6 @@ p span {
 }
 
 .timeline {
-    /* width: 100%; */
     box-sizing: border-box;
     margin-top: 50px;
   }
@@ -192,6 +192,7 @@ p span {
 .requirement {
     border-radius: 20px;
     margin: auto;
+    margin-top: 30px;
     padding: 0 50px;
     box-sizing: border-box;
     display: grid;
@@ -216,10 +217,11 @@ p span {
 
 .hadiah {
     border-radius: 10px;
-    margin: 50px auto;
+    margin: 50px 0;
     display: grid;
     place-items: center;
-    width: 80%;
+    width: 100%;
+    background-color: #FAEF5D;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -231,14 +233,15 @@ p span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    border-style: double;
-    border-width: 1rem;
+    width: 80%;
     border-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
+    font-size: 2rem;
     padding: 50px;
-    color: #7E2553;
-    background-color: #FAEF5D;
+    color: #ffffff;
+    background: url('../images/main-sic.png') no-repeat;
+    background-position: center;
+    background-size: cover;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -277,12 +280,16 @@ footer {
     margin: 0;
     padding: 0;
   }
-
+/* 
   #navigasi {
     display: none;
+  } */
+  
+  .navigasi a {
+    font-size: 9px;
+
   }
-  
-  
+
   .main-logo {
     display: flex;
     flex-direction: column-reverse;
@@ -336,7 +343,7 @@ footer {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: fit-content;
+    height: max-content;
     margin-top: 20px;
   }
 
@@ -359,12 +366,18 @@ footer {
   .hadiah {
     height: fit-content;
     width: 100%;
+    margin: 10px 0;
+  }
+
+  .prize {
+    font-size: 1rem;
+    padding: 5px;
   }
 
   footer {
     padding: 0;
     margin: 0;
-    background: #ceccc0;
+    background: #f1f1f1;
   }
 
   .awal {
@@ -379,7 +392,9 @@ footer {
     align-items: center;
   }
 
-  
+  .logo-new {
+    width: 200px;
+  }
 
   .end {
     margin: 0 10px;
