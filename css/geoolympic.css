@@ -93,7 +93,7 @@ main {
 }
 
 .welcome {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .grid-child {
@@ -172,9 +172,6 @@ p span {
     box-sizing: border-box;
     margin-top: 50px;
   }
-
-
-
 
 .requirement {
     border-radius: 20px;
@@ -299,8 +296,10 @@ footer {
   }
 
   .welcome {
-    width: 100%;
+    width: 90%;
     font-size: 10px;
+    margin: auto;
+    margin-bottom: 20px;
   }
 
 
@@ -309,6 +308,7 @@ footer {
     flex-direction: column;
     font-size: 10px;
     width: 90%;
+    padding: 10px;
   }
 
   .what_is_child h2 {
@@ -371,6 +371,11 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    
+  }
+
+  .logo-footer p{
+    font-size: 10px;
   }
 
   .logo-new {
