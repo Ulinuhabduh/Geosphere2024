@@ -1,10 +1,3 @@
-body, html {
-    /* background-image:url("/images/gradiant.png"); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: auto;
-}
-
 aside {
   display: flex;
   flex-direction: column;
@@ -68,187 +61,12 @@ li a:hover {
 
 
 main {
-  /* background-image:url("/images/gradiant.png");
-  background-repeat: no-repeat;
-  background-size: cover; */
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 80vh;
   justify-content: center;
   align-items: center;
-}
-
-hr {
-    border: 1px solid black;
-}
-
-.gtalk-1 {
-    padding-top: 7%;
-    padding-bottom: 10%;
-    padding-right: 20%;
-    padding-left: 20%;
-}
-
-.title-1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 64px;
-    font-weight: 700;
-    text-align: center;
-    color: rgba(170, 10, 0, 1);
-}
-
-.subtitle-1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-}
-
-.gtalk-2 {
-    padding-bottom: 10%;
-    padding-left: 15%;
-    padding-right: 15%;
-}
-
-.title-2 {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 38px;
-    font-weight: 700;
-    line-height: 42.41px;
-}
-
-.thetalkers {
-    display: flex;
-    flex-wrap: nowrap;
-    padding-top: 5%;
-}
-
-.subtitle-2 {
-    padding-left:10%;
-    text-align: left;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 200;
-}
-
-.gtalk-3 {
-    padding-bottom: 3%;
-    padding-left: 15%;
-    padding-right: 15%;
-}
-
-.title-3 {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 38px;
-    font-weight: 700;
-    line-height: 42.41px;
-    padding-bottom: 2%;
-}
-
-.subtitle-3 {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    line-height: 42.41px;
-}
-
-.sub-subtitle-3 {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-}
-
-.gtalk-4 {
-    padding-bottom: 5%;
-    padding-left: 15%;
-    padding-right: 15%;
-}
-
-.subtitle-4 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    line-height: 42.41px;
-}
-
-.sub-subtitle-4 {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.gtalk-5 {
-    padding-top: 5%;
-    padding-bottom: 10%;
-    padding-left: 15%;
-    padding-right: 15%;
-}
-
-.title-5 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 38px;
-    font-weight: 700;
-    line-height: 42.41px;
-    padding-bottom: 2%;
-}
-
-.subtitle-5 {
-    display: flex;
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-.hide {
-    list-style: none;
-}
-
-.open {
-    font-weight: 600;
-}
-
-.sub-subtitle-5_1 {
-    width: 20%;
-    margin-right: 20%;
-}
-
-.close {
-    font-weight: 600;
-}
-
-.sub-subtitle-5_2 {
-    width: 20%;
-    margin-right: 20%;
-}
-
-.dday {
-    font-weight: 600;
-}
-
-.sub-subtitle-5_3 {
-    width: 20%;
-}
-
-.bottom-navbar {
-    background-color: rgba(255, 255, 255, 0.05); 
-    backdrop-filter: blur(30px); 
-    padding: 30px;
-    display: flex;
-    text-align: center;
-}
-
-.bottom-1 {
-    width: 50%;
-}
-
-.ig-icon {
-    width: 30px;
-    height: 30px;
-}
-
-.wa-icon {
-    width: 25px;
-    height: 25px;
-}
-
-.bottom-2 {
-    width: 50%;
 }
 
 footer {
@@ -264,4 +82,44 @@ footer {
 
 .logo-new {
     width: 200px;
+}
+
+@media screen and (max-width: 576px) {
+  body {
+    width: 100%;
+  }
+  
+  .navigasi a {
+    font-size: 9px;
+  }
+
+  footer {
+    padding: 0;
+    margin: 0;
+    background: #f1f1f1;
+  }
+
+  .awal {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .logo-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .logo-new {
+    width: 200px;
+  }
+
+  .end {
+    margin: 0 10px;
+  }
+
+  .contact, .about, .event-1 {
+    display: none;
+  }
 }

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>GeoOlympic | Geosphere</title>
-    <link rel="icon" href="/images/LOGO G.png" type="image/x-icon">
+    <link rel="icon" href="/images/logo-geol.png" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -20,9 +20,14 @@
 
     <link rel="stylesheet" href="/css/geoolympic.css">
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
   </head>
 
-  <body>
+  <body class="bg-light">
 
     <div class="article">
 
@@ -31,37 +36,98 @@
           <img class="logo" src="/images/Logo Geosphere 2024.PNG" alt="">
         </div>
   
-        <ul>
-          <li>
+        <ul id="navigasi">
+          <li class="navigasi">
             <a href="/views/geoolympic.html">GeoOlympic</a>
           </li>
-          <li>
+          <li class="navigasi">
             <a href="/views/sic.html">SIC</a>
           </li>
-          <li>
+          <li class="navigasi">
             <a href="/views/geotraining.html">Geotraining</a>
           </li>
-          <li>
+          <li class="navigasi">
             <a href="/views/gtalk.html">Gtalk</a>
           </li>
-          <li>
+          <li class="navigasi">
             <a href="/views/geolog.html">Geolog</a>
           </li>
         </ul>
+
         <hr>
 
       </aside>
-      
-      <main class="fw-bold">
-        <p>Tidak ada informasi untuk sementara ini.</p>
-        <p>Tunggu update selanjutnya ya...</p>
-      </main>
 
+      <main class="fw-bold">
+        <div class=" main-logo animate__animated animate__fadeInDown animate__delay-1s">
+          <div class="grid-2 text-center">
+            <h2 class="text-black">GeoOlympic (Earth Sciences)</h2>
+            <h3 class="text-primary">"Enhancing Knowledge of the Geoscience and Oil Gas Industry for Youth"</h3>
+            <p class="welcome text-black">Indonesia, as a country rich in natural resources, faces challenges related to energy security that require the application of high geoscience and cutting-edge technology in the oil and gas industry to solve. The application of geosciences in the industry is useful for detecting, describing and managing oil and gas reservoirs, enabling identification of resource potential, exploration and production planning, as well as efficient and sustainable management so that it is possible to solve problems related to energy security.
+            </p>
+            <p class="text-info fw-bolder text-decoration-underline">Guidebook, Handbook dan Registrasi SIC</p>
+            <div class="grid-child">
+              <button class="btn btn-primary p-2" id="guidebook">Guidebook</button>
+              <button class="btn btn-primary p-2" id="handbook">Handbook</button>
+              <button onclick="redirect('regis_maha')" class="btn btn-success p-2" id="">Registrasi</button>
+            </div>
+          </div>
+          <div class="grid-1">
+            <img src="../images/logo-geol.png" alt="" class="logo-seismic">
+          </div>
+        </div>
+
+      <div class="what_is">
+        <div class="what_is_child animate__animated animate__fadeInDown animate__delay-2s">
+          <p>Calling all young 𝙜𝙚𝙤𝙨𝙘𝙞𝙚𝙣𝙘𝙚 enthusiasts!</p>
+          <p>Join us in celebrating the spirit of exploration and knowledge at GeoOlympic, an exhilarating subevent of Geosphere by HMTG ITS! 🌍🏆 Unleash your geoscientific expertise and take on the challenge of the four stages: Online Selection, Amazing Run, Death Match, and Final Presentation.This nationwide competition is a chance for high school students to showcase their mastery of Geology, Geophysics, Hydrology, and Astronomy. Let's embrace the wonders of Earth sciences and ignite a passion for geophysical pursuits!</p>
+        </div>
+      </div>
+
+      <div class="timeline animate__animated animate__fadeInDown animate__delay-2s" id="timeline">
+          <div>
+            <img src="../images/timeline-geol.png" alt="">
+          </div>
+        
+      </div>
+        
+
+      <div class="requirement animate__animated animate__fadeInDown animate__delay-4s">
+
+        <div>
+          <h2 class="fw-bolder text-center text-success">REQUIREMENT</h2>
+          <p class="text-center text-dark">For more details, please refer to the guidebook</p>
+        </div>
+
+        <div>
+          <h4 class="text-start text-dark">The participants of GeoOlympic 2024 must fulfill the requirements below :</h4>
+
+          <ul>
+            <li>Participants are high school / equivalent level students in Indonesia as evidenced by a student card.</li>
+            <li>Participants are individualized</li>
+            <li>Participants can register through the link listed according to the date that has been set.</li>
+            <li>Participants are required to complete registration and registration fees set by the committee.</li>
+            <li>The online selection of the Earth Olympiad is carried out through a link that will be provided by the committee.</li>
+          </ul>
+        </div> 
+      </div>
+
+
+      <div class="hadiah">
+
+        <div class="prize">
+          <p>Total Prize GeoOlympic 2024</p>
+
+          <p>4.5 Milion Rupiah</p>
+        </div>
+      </div>
+
+      </main>
 
     </div>
 
     <!-- Footer -->
-    <footer class="container-fluid bg-white">
+    <footer class="container-fluid">
       <div class="awal">
         <div class="logo-footer">
           <img class="logo-new" src="../images/LOGO G.png" alt="">
@@ -83,11 +149,11 @@
         </div>
         <div class="event-1">
           <h4>Event</h4>
-          <p>SIT</p>
-          <p>LOG</p>
-          <p>SIC</p>
-          <p>Geolympic</p>
-          <p>Gtalk!</p>
+          <p><a href="../views/geotraining.html" class="text-decoration-none">SIT</a></p>
+          <p><a href="../views/geolog.html" class="text-decoration-none">LOG</a></p>
+          <p><a href="../views/sic.html" class="text-decoration-none">SIC</a></p>
+          <p><a href="../views/geoolympic.html" class="text-decoration-none">GeoOlympic</a></p>
+          <p><a href="../views/gtalk.html" class="text-decoration-none">Gtalk!</a></p>
           <p><a class="text-decoration-none" href="../index.html">Home</a></p>
         </div>
       </div>
@@ -111,5 +177,7 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+
+    <!-- <script src="../script/sic.js"></script> -->
   </body>
 </html>

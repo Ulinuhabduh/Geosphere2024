@@ -83,3 +83,43 @@ footer {
 .logo-new {
     width: 200px;
 }
+
+@media screen and (max-width: 576px) {
+  body {
+    width: 100%;
+  }
+  
+  .navigasi a {
+    font-size: 9px;
+  }
+
+  footer {
+    padding: 0;
+    margin: 0;
+    background: #f1f1f1;
+  }
+
+  .awal {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .logo-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .logo-new {
+    width: 200px;
+  }
+
+  .end {
+    margin: 0 10px;
+  }
+
+  .contact, .about, .event-1 {
+    display: none;
+  }
+}

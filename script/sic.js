@@ -1,17 +1,3 @@
-// Fungsi untuk menyembunyikan alert setelah 3 detik
-function hideAutoHideAlert() {
-  // Pilih elemen alert
-  const alertElement = document.getElementById("autoHideAlert");
-
-  // Tunggu 3 detik (3000 milidetik) dan kemudian sembunyikan alert
-  setTimeout(function () {
-    alertElement.style.display = "none";
-  }, 10000);
-}
-
-// Panggil fungsi untuk menyembunyikan alert secara otomatis
-hideAutoHideAlert();
-
 document.getElementById("guidebook").addEventListener("click", function () {
   // URL file yang ingin diunduh
   var fileUrl = "/";
