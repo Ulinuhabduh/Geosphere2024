@@ -75,10 +75,6 @@ button {
     gap: 50px;
 }
 
-/* .join-sponsor {
-    padding: 50px;
-} */
-
 .uni-sponsor {
     margin: 10px 50px;
     width: 200px;
@@ -155,6 +151,27 @@ button:hover {
 
     .first h2 {
         font-size: 20px;
+    }
+
+    .sponsor {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+    }
+
+    .join-sponsor {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .uni-sponsor {
+        width: 50%;
+        margin: auto;
     }
 
     .documentation .video-foto {
