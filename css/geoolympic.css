@@ -75,16 +75,15 @@ main {
 
 .main-logo {
     color: rgb(255, 255, 255);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-content: center;
-    height: 80dvh;
+    display: flex;
     box-sizing: border-box;
+    padding-left: 50px;
+    padding-top: 50px;
+    margin: auto;
 }
 
 .grid-2 {
-  padding-left: 50px;
-  grid-column: 1;
+  width: 50%;
 }
 
 .logo-seismic {
@@ -92,8 +91,9 @@ main {
 }
 
 .grid-1 {
-  margin: auto;
-  grid-column: 2;
+  width: 50%;
+  display: flex;
+  justify-content: center;
 }
 
 .welcome {
@@ -272,11 +272,15 @@ footer {
   }
 
   .main-logo {
-    display: flex;
     flex-direction: column-reverse;
     width: 100%;
     height: fit-content;
     margin: 0;
+    padding: 0;
+  }
+
+  .grid-1 {
+    width: 100%;
   }
 
   .grid-1 img {
@@ -284,7 +288,7 @@ footer {
   }
 
   .grid-2 {
-    padding: 5px;
+    width: 100%;
   }
 
   .grid-2 h2 {
