@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF.js Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279/pdf.min.js"></script>
+    <style>
+        #pdf-box {
+            display: flex;
+            justify-content: center;
+        }
+
+        #pdf-viewer {
+            display: flex;
+            flex-direction: column;
+            width: 65%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="pdf-box">
+        <div id="pdf-viewer"></div>  
+    </div>
+
+    <script>
+        const url = '../guidebook/Chapter 1 Theory Of Wave Motion.pdf';
+
+        // Function to load PDF
+        async function loadPDF(url) {
+            const loadingTask = pdfjsLib.getDocument(url);
+            const pdf = await loadingTask.promise;
+
+            // Render each page
+            for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+                await renderPage(pdf, pageNumber);
+            }
+        }
+
+        // Function to render a single page
+        async function renderPage(pdf, pageNumber) {
+            const page = await pdf.getPage(pageNumber);
+            const scale = 3;
+            const viewport = page.getViewport({ scale: scale });
+
+            // Prepare canvas using PDF page dimensions
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            canvas.classList.add('pdf-page');
+
+            // Append canvas to the viewer
+            document.getElementById('pdf-viewer').appendChild(canvas);
+
+            // Render PDF page into canvas context
+            const renderContext = {
+                canvasContext: context,
+                viewport: viewport
+            };
+            await page.render(renderContext).promise;
+        }
+
+        // Load the PDF
+        loadPDF(url);
+    </script>
+</body>
+</html>

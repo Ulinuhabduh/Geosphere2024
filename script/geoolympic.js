@@ -34,8 +34,3 @@ function redirect(page) {
   // Ganti URL sesuai dengan halaman yang diinginkan
   window.location.href = page;
 }
-
-function toggleMenu() {
-  const links = document.querySelector(".links");
-  links.classList.toggle("show");
-}
