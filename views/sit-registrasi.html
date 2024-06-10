@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            border-top: 8px solid #C15F04;
+        }
+        .form-container h2 {
+            color: #190100;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #190100;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #C15F04;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff8e1;
+            color: #190100;
+        }
+        .form-group input[type="file"] {
+            padding: 5px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #C15F04;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 20px auto 0;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #190100;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Formulir Pendaftaran</h2>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="nama_lengkap">Nama Lengkap</label>
+                <input type="text" id="nama_lengkap" name="nama_lengkap" required>
+            </div>
+            <div class="form-group">
+                <label for="asal_institusi">Asal Institusi</label>
+                <input type="text" id="asal_institusi" name="asal_institusi" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="no_whatsapp">No Whatsapp</label>
+                <input type="tel" id="no_whatsapp" name="no_whatsapp" required>
+            </div>
+            <div class="form-group">
+                <label for="ktp_ktm">Upload KTP/KTM</label>
+                <input type="file" id="ktp_ktm" name="ktp_ktm" accept=".jpg,.jpeg,.png,.pdf" required>
+            </div>
+            <div class="form-group">
+                <label for="bukti_pembayaran">Bukti Pembayaran</label>
+                <input type="file" id="bukti_pembayaran" name="bukti_pembayaran" accept=".jpg,.jpeg,.png,.pdf" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
