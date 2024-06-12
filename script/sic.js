@@ -30,10 +30,10 @@ function openNewTab(url) {
 }
 
 // Fungsi untuk mengarahkan ke halaman tertentu
-    function redirect(page) {
+function redirect(page) {
       // Ganti URL sesuai dengan halaman yang diinginkan
       window.location.href = page;
-    }
+  }
 
 function toggleMenu() {
   const links = document.querySelector(".links");

@@ -78,10 +78,14 @@ footer {
 }
 
 .awal {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    place-items: center;
+    gap: 50px;
+    display: flex;
     margin: 0px 80px;
+}
+
+.end {
+  display: flex;
+  margin: 0 80px;
 }
 
 .logo-new {
@@ -113,10 +117,11 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
   }
 
   .logo-new {
-    width: 200px;
+    width: 120px;
   }
 
   .end {
