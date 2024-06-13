@@ -5,98 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir Pendaftaran</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
+            background-color: black;
         }
-        .form-container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 500px;
-            border-top: 8px solid #C15F04;
+        .form {
+        background-color: #15172b;
+        border-radius: 20px;
+        box-sizing: border-box;
+        height: fit-content;
+        padding: 20px;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
         }
-        .form-container h2 {
-            color: #190100;
-            margin-bottom: 20px;
-            text-align: center;
+
+        .title {
+        color: #eee;
+        font-family: sans-serif;
+        font-size: 36px;
+        font-weight: 600;
+        margin-top: 30px;
         }
-        .form-group {
-            margin-bottom: 15px;
+
+        .subtitle {
+        color: #eee;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 10px;
         }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-            color: #190100;
+
+        .input-container {
+        height: 50px;
+        position: relative;
+        width: 100%;
         }
-        .form-group input {
-            width: 100%;
-            padding: 5px;
-            border: 1px solid #C15F04;
-            border-radius: 5px;
-            font-size: 16px;
-            background-color: #fff8e1;
-            color: #190100;
+
+        .ic1 {
+        margin-top: 40px;
         }
-        .form-group input[type="file"] {
-            padding: 5px;
+
+        .ic2 {
+        margin-top: 30px;
         }
-        .form-group input[type="submit"] {
-            background-color: #C15F04;
-            color: white;
-            border: none;
-            cursor: pointer;
-            padding: 10px 5px;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            display: block;
-            margin: 20px auto 0;
+
+        .input {
+        background-color: #303245;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        font-size: 18px;
+        height: 100%;
+        outline: 0;
+        padding: 4px 20px 0;
+        width: 100%;
         }
-        .form-group input[type="submit"]:hover {
-            background-color: #190100;
+
+        .cut {
+        background-color: #15172b;
+        border-radius: 10px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 76px;
+        }
+
+        .cut-short {
+        width: 50px;
+        }
+
+        .iLabel {
+        color: #65657b;
+        font-family: sans-serif;
+        left: 20px;
+        line-height: 14px;
+        pointer-events: none;
+        position: absolute;
+        transform-origin: 0 50%;
+        transition: transform 200ms, color 200ms;
+        top: 20px;
+        transform: translateY(-40px) translateX(0px) scale(0.75);
+        }
+
+        .input:focus ~ .cut {
+        transform: translateY(8px);
+        }
+
+        .input:focus ~ .iLabel {
+        transform: translateY(-30px) translateX(5px) scale(0.75);
+        }
+
+        .input:not(:focus) ~ .iLabel {
+        color: #808097;
+        }
+
+        .input:focus ~ .iLabel {
+        color: #dc2f55;
+        }
+
+        .submit {
+        background-color: #08d;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        cursor: pointer;
+        font-size: 18px;
+        height: 50px;
+        margin-top: 38px;
+        text-align: center;
+        width: 100%;
+        }
+
+        .submit:active {
+        background-color: #06b;
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Formulir Pendaftaran</h2>
-        <form action="#" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="nama_lengkap">Nama Lengkap</label>
-                <input type="text" id="nama_lengkap" name="nama_lengkap" required>
-            </div>
-            <div class="form-group">
-                <label for="asal_institusi">Asal Institusi</label>
-                <input type="text" id="asal_institusi" name="asal_institusi" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="no_whatsapp">No Whatsapp</label>
-                <input type="tel" id="no_whatsapp" name="no_whatsapp" required>
-            </div>
-            <div class="form-group">
-                <label for="ktp_ktm">Upload KTP/KTM</label>
-                <input type="file" id="ktp_ktm" name="ktp_ktm" accept=".jpg,.jpeg,.png,.pdf" required>
-            </div>
-            <div class="form-group">
-                <label for="bukti_pembayaran">Bukti Pembayaran</label>
-                <input type="file" id="bukti_pembayaran" name="bukti_pembayaran" accept=".jpg,.jpeg,.png,.pdf" required>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Submit">
-            </div>
-        </form>
+    <div class="form">
+      <div class="title">Welcome</div>
+      <div class="subtitle">Register Yourself Soon!</div>
+
+      <div class="input-container ic1">
+        <input placeholder="" type="text" class="input" id="email">
+        <div class="cut"></div>
+        <label class="iLabel" for="firstname">Email Address</label>
+      </div>
+
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="name">
+        <div class="cut"></div>
+        <label class="iLabel" for="lastname">Name</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="major">
+        <div class="cut cut-short"></div>
+        <label class="iLabel" for="email">Major and Institution</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="phone">
+        <div class="cut"></div>
+        <label class="iLabel" for="firstname">Phone</label>
+      </div>
+
+      <button class="submit" type="text">Submit</button>
     </div>
 </body>
 </html>

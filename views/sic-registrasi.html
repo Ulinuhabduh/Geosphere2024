@@ -5,147 +5,235 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir Pendaftaran</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
+            background-color: black;
         }
-        .form-container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 700px;
-            border-top: 8px solid #C15F04;
+        .form {
+        background-color: #15172b;
+        border-radius: 20px;
+        box-sizing: border-box;
+        height: fit-content;
+        padding: 20px;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
         }
-        .form-container h2 {
-            color: #190100;
-            margin-bottom: 20px;
-            text-align: center;
+
+        .title {
+        color: #eee;
+        font-family: sans-serif;
+        font-size: 36px;
+        font-weight: 600;
+        margin-top: 30px;
         }
-        .form-group {
-            margin-bottom: 15px;
+
+        .subtitle {
+        color: #eee;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 10px;
         }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-            color: #190100;
+
+        .input-container {
+        height: 50px;
+        position: relative;
+        width: 100%;
         }
-        .form-group input {
-            width: 100%;
-            padding: 5px;
-            border: 1px solid #C15F04;
-            border-radius: 5px;
-            font-size: 16px;
-            background-color: #F9DD3F;
-            color: #190100;
+
+        .ic1 {
+        margin-top: 40px;
         }
-        .form-group input[type="file"] {
-            padding: 5px;
+
+        .ic2 {
+        margin-top: 30px;
         }
-        .form-group input[type="submit"] {
-            background-color: #C15F04;
-            color: white;
-            border: none;
-            cursor: pointer;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            display: block;
-            margin: 20px 0;
+
+        .input {
+        background-color: #303245;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        font-size: 18px;
+        height: 100%;
+        outline: 0;
+        padding: 4px 20px 0;
+        width: 100%;
         }
-        .form-group input[type="submit"]:hover {
-            background-color: #190100;
+
+        .cut {
+        background-color: #15172b;
+        border-radius: 10px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 76px;
+        }
+
+        .cut-short {
+        width: 50px;
+        }
+
+        .iLabel {
+        color: #65657b;
+        font-family: sans-serif;
+        left: 20px;
+        line-height: 14px;
+        pointer-events: none;
+        position: absolute;
+        transform-origin: 0 50%;
+        transition: transform 200ms, color 200ms;
+        top: 20px;
+        transform: translateY(-40px) translateX(0px) scale(0.75);
+        }
+
+        .input:focus ~ .cut {
+        transform: translateY(8px);
+        }
+
+        .input:focus ~ .iLabel {
+        transform: translateY(-30px) translateX(5px) scale(0.75);
+        }
+
+        .input:not(:focus) ~ .iLabel {
+        color: #808097;
+        }
+
+        .input:focus ~ .iLabel {
+        color: #dc2f55;
+        }
+
+        .submit {
+        background-color: #08d;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        cursor: pointer;
+        font-size: 18px;
+        height: 50px;
+        margin-top: 38px;
+        text-align: center;
+        width: 100%;
+        }
+
+        .submit:active {
+        background-color: #06b;
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Registration Form</h2>
-        <form action="#" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="team_name">Team Name</label>
-                <input type="text" id="team_name" name="team_name" required>
-            </div>
-            <div class="form-group">
-                <label for="university">University</label>
-                <input type="text" id="university" name="university" required>
-            </div>
-            <div class="form-group">
-                <label for="member1_name">Name of Member 1 (Leader)</label>
-                <input type="text" id="member1_name" name="member1_name" required>
-            </div>
-            <div class="form-group">
-                <label for="major1">Major</label>
-                <input type="text" id="major1" name="major1" required>
-            </div>
-            <div class="form-group">
-                <label for="email1">Email</label>
-                <input type="email" id="email1" name="email1" required>
-            </div>
-            <div class="form-group">
-                <label for="ktm-1">Student Identity Card (KTM)</label>
-                <input type="file" id="ktm1" name="id1" accept=".jpg,.jpeg,.png,.pdf" required>
-            </div>
-            <div class="form-group">
-                <label for="ktp-1">Resident Identification Card (KTP)</label>
-                <input type="file" id="ktp1" name="id1" accept=".jpg,.jpeg,.png,.pdf" required>
-            </div>
-            <div class="form-group">
-                <label for="member2_name">Name of Member 2</label>
-                <input type="text" id="member2_name" name="member2_name" required>
-            </div>
-            <div class="form-group">
-                <label for="major2">Major</label>
-                <input type="text" id="major2" name="major2" required>
-            </div>
-            <div class="form-group">
-                <label for="email2">Email</label>
-                <input type="email" id="email2" name="email2" required>
-            </div>
-            <div class="form-group">
-                <label for="ktm-2">Student Identity Card (KTM)</label>
-                <input type="file" id="ktm2" name="id2" accept=".jpg,.jpeg,.png,.pdf" required>
-            </div>
-            <div class="form-group">
-                <label for="ktp-2">Resident Identification Card (KTP)</label>
-                <input type="file" id="ktp2" name="id1" accept=".jpg,.jpeg,.png,.pdf" required>
-            </div>
-            <div class="form-group">
-                <label for="member3_name">Name of Member 3</label>
-                <input type="text" id="member3_name" name="member3_name" required>
-            </div>
-            <div class="form-group">
-                <label for="major3">Major</label>
-                <input type="text" id="major3" name="major3" required>
-            </div>
-            <div class="form-group">
-                <label for="email3">Email</label>
-                <input type="email" id="email3" name="email3" required>
-            </div>
-            <div class="form-group">
-                <label for="ktm-3">Student Identity Card (KTM)</label>
-                <input type="file" id="ktm3" name="id3" accept=".jpg,.jpeg,.png,.pdf" required>
-            </div>
-            <div class="form-group">
-                <label for="ktp-3">Resident Identification Card (KTP)</label>
-                <input type="file" id="ktp3" name="id1" accept=".jpg,.jpeg,.png,.pdf" required>
-            </div>
-            <div class="form-group">
-                <label for="proof_of_transaction">Proof of Transaction</label>
-                <input type="file" id="proof_of_transaction" name="proof_of_transaction" accept=".jpg,.jpeg,.png,.pdf" required>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Submit">
-            </div>
-        </form>
+    <div class="form">
+      <div class="title">Welcome</div>
+      <div class="subtitle">Register Yourself Soon!</div>
+
+      <div class="input-container ic1">
+        <input placeholder="" type="text" class="input" id="team" required>
+        <div class="cut"></div>
+        <label class="iLabel" for="teamName">Team Name</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="university" required>
+        <div class="cut cut-short"></div>
+        <label class="iLabel" for="university">University</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="lead" required>
+        <div class="cut"></div>
+        <label class="iLabel" for="lead">Leader Name</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="major" required>
+        <div class="cut cut-short"></div>
+        <label class="iLabel" for="major">Major Leader</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="email" required>
+        <div class="cut"></div>
+        <label class="iLabel" for="email">Email Leader</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="anggota_1">
+        <div class="cut"></div>
+        <label class="iLabel" for="anggota">First Member</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="major">
+        <div class="cut cut-short"></div>
+        <label class="iLabel" for="major">Major First Member</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="email">
+        <div class="cut"></div>
+        <label class="iLabel" for="email">Email First Member</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="anggota_1">
+        <div class="cut"></div>
+        <label class="iLabel" for="anggota">Second Member</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="major">
+        <div class="cut cut-short"></div>
+        <label class="iLabel" for="major">Major Second Member</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="email">
+        <div class="cut"></div>
+        <label class="iLabel" for="email">Email Second Member</label>
+      </div>
+      <div class="input-container ic2">
+        <input placeholder="" type="text" class="input" id="file" required>
+        <div class="cut"></div>
+        <label class="iLabel" for="lastname">Link Drive</label>
+      </div>
+      <p class="text-white">*Note : Link drive containing Identitiy Scan for each student, and proof of payment*</p>
+
+      <button class="submit" type="button" onclick="validateForm()">Submit</button>
     </div>
 </body>
+<script>
+        function validateForm() {
+            // Ambil nilai dari input yang diperlukan
+            var team = document.getElementById('team').value;
+            var university = document.getElementById('university').value;
+            var lead = document.getElementById('lead').value;
+            // Tambahkan variabel lainnya sesuai kebutuhan
+
+            var inputs = document.querySelectorAll('.form [required]');
+            var allFilled = true;
+
+            inputs.forEach(function(input) {
+                if (!input.value) {
+                    allFilled = false;
+                    input.style.borderColor = 'red'; // Tandai input yang kosong dengan warna merah
+                } else {
+                    input.style.borderColor = ''; // Kembalikan warna border default jika diisi
+                }
+            });
+
+            // Lakukan pemeriksaan untuk memastikan semua input yang diperlukan diisi
+            if (team == '' || university == '' || lead == '') {
+                alert('Harap isi semua kolom yang diperlukan!');
+            } else {
+                // Jika semua input sudah diisi, submit form
+                document.getElementById('myForm').submit();
+            }
+        }
+    </script>
 </html>
