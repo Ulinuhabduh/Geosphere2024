@@ -1,5 +1,7 @@
 * {
   font-family: "Montserrat", sans-serif;
+  /* background-color: #15172b; */
+
 }
 
 aside {
@@ -52,10 +54,10 @@ aside {
 .navigasi a {
   width: initial;
   text-decoration: none;
-  color: black;
   font-weight: 600;
   font-size: 20px;
   text-transform: uppercase;
+  background: transparent;
 }
 
 .navigasi a:hover {
@@ -245,12 +247,15 @@ p span {
 
 footer {
     margin: 0;
+    /* color: white;
+    background-color: #15172b; */
 }
 
 .awal {
     gap: 50px;
     display: flex;
     margin: 0px 80px;
+    padding: 10px 0;
 }
 
 .end {

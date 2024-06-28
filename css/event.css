@@ -1,3 +1,7 @@
+body {
+  background-color: #15172b;
+  color: white;
+}
 aside {
   display: flex;
   flex-direction: column;
@@ -49,7 +53,6 @@ ul li:hover {
 li a {
   width: initial;
   text-decoration: none;
-  color: black;
   font-weight: 600;
   font-size: 20px;
   text-transform: uppercase;
@@ -71,13 +74,21 @@ main {
 
 footer {
     margin: 0;
+    color: white;
+    /* background-color: #15172b; */
+
 }
 
 .awal {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    place-items: center;
+    gap: 50px;
+    display: flex;
     margin: 0px 80px;
+    padding: 10px 0;
+}
+
+.end {
+  display: flex;
+  margin: 0 80px;
 }
 
 .logo-new {

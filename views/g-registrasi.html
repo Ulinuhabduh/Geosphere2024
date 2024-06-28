@@ -14,14 +14,95 @@
     />
     <style>
         body {
-            background-color: black;
-        }
-        .form {
         background-color: #15172b;
+        }
+
+        .button-container {
+          display: flex;
+          justify-content: center;
+          gap: 450px;
+        }
+
+        .button-3d {
+          -webkit-appearance: none;
+          appearance: none;
+          position: relative;
+          border-width: 0;
+          padding: 0 8px;
+          min-width: 4em;
+          min-height: 4em;
+          box-sizing: border-box;
+          background: transparent;
+          font: inherit;
+          cursor: pointer;
+          margin: 10px;
+          border-radius: 20px;
+        }
+
+        .button-top {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          z-index: 2;
+          padding: 8px 16px;
+          transform: translateY(0);
+          color: #fff;
+          background-image: linear-gradient(145deg, #6a11cb, #2575fc);
+          text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
+          border-radius: 20px;
+          transition: transform 0.3s, border-radius 0.3s, background 10s;
+        }
+
+        .button-3d:active .button-top {
+          border-radius: 10px 10px 8px 8px / 8px;
+          transform: translateY(2px);
+          background-image: linear-gradient(145deg, #2575fc, #6a11cb);
+        }
+
+        .button-bottom {
+          position: absolute;
+          z-index: 1;
+          bottom: 4px;
+          left: 4px;
+          border-radius: 20px;
+          padding-top: 6px;
+          width: calc(100% - 8px);
+          height: calc(100% - 10px);
+          background-image: linear-gradient(145deg, #2575fc, #6a11cb);
+          box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+          transition: border-radius 0.2s, padding-top 0.2s;
+        }
+
+        .button-base {
+          position: absolute;
+          z-index: 0;
+          top: 4px;
+          left: 0;
+          border-radius: 20px;
+          width: 100%;
+          height: calc(100% - 4px);
+          background-color: rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.75),
+            inset 0 2px 2px rgba(0, 0, 0, 0.25);
+          transition: border-radius 0.2s, padding-top 0.2s;
+        }
+
+        .button-3d:active .button-bottom {
+          border-radius: 10px 10px 8px 8px / 8px;
+          padding-top: 0;
+        }
+
+        .button-3d:active .button-base {
+          border-radius: 10px 10px 8px 8px / 8px;
+        }
+
+
+        .form {
         border-radius: 20px;
         box-sizing: border-box;
         height: fit-content;
-        padding: 20px;
+        padding: 0px 100px 50px 100px;
         max-width: 800px;
         display: flex;
         flex-direction: column;
@@ -132,9 +213,49 @@
         width: 100%;
         }
 
+        .input-container_radio {
+          margin-bottom: 15px;
+        }
+
+        .iLabel_radio {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+          color: white;
+        }
+
+        .radio-container {
+          margin-left: 20px;
+          color: white;
+        }
+
+        #student-name {
+          display: none; /* Initially hidden */
+          margin-top: 10px;
+          margin-left: 30px;
+          padding: 10px;
+          width: calc(100% - 60px); /* Adjust based on margin-left and padding */
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          font-size: 14px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        #geophysical-student:checked ~ #student-name {
+          display: block;
+        }
+
         .submit:active {
         background-color: #06b;
         }
+
+        @media screen and (max-width: 600px) {
+        .form {
+            padding: 0px 20px 20px 20px;
+        }
+        
+      }
     </style>
 </head>
 <body>
@@ -168,6 +289,18 @@
         <div class="cut"></div>
         <label class="iLabel" for="firstname">Phone</label>
       </div>
+      <div class="input-container_radio ic2">
+        <label class="iLabel_radio">Where did you hear about this geosphere event?</label>
+        <div class="radio-container">
+          <input type="radio" id="ig" name="source" value="ig">
+          <label for="ig">Instagram</label><br>
+          <input type="radio" id="tiktok" name="source" value="tiktok">
+          <label for="tiktok">TikTok</label><br>
+          <input type="radio" id="geophysical-student" name="source" value="geophysical-engineering-student">
+          <label for="geophysical-student">Geophysical Engineering Student</label>
+          <input type="text" id="student-name" name="student-name" placeholder="Enter name here">
+        </div>
+      </div>
 
       <div class="input-container ic2">
         <input placeholder="" type="text" class="input" id="file" required>
@@ -178,20 +311,33 @@
 
       <button class="submit" type="text">Submit</button>
     </div>
+    <div class="button-container" onclick="window.location.href = '/views/geoolympic.html';">
+      <button class="button-3d">
+        <div class="button-top">
+          <span class="material-icons">❮</span>
+        </div>
+        <div class="button-bottom"></div>
+        <div class="button-base"></div>
+      </button>
+      <button class="button-3d d-none">
+        <div class="button-top">
+          <span class="material-icons">❯</span>
+        </div>
+        <div class="button-bottom"></div>
+        <div class="button-base"></div>
+      </button>
+    </div>
 </body>
 <script>
-        function validateForm() {
-            var inputs = document.querySelectorAll('#form [required]');
-            var allFilled = true;
-
-            inputs.forEach(function(input) {
-                if (!input.value) {
-                    allFilled = false;
-                    input.style.borderColor = 'red'; // Tandai input yang kosong dengan warna merah
-                } else {
-                    input.style.borderColor = ''; // Kembalikan warna border default jika diisi
-                }
-            });
-        }
-    </script>
+document.querySelectorAll('input[name="source"]').forEach((elem) => {
+  elem.addEventListener('change', function() {
+    const studentNameField = document.getElementById('student-name');
+    if (document.getElementById('geophysical-student').checked) {
+      studentNameField.style.display = 'block';
+    } else {
+      studentNameField.style.display = 'none';
+    }
+  });
+});          
+</script>
 </html>

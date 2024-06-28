@@ -6,6 +6,7 @@
 aside {
   display: flex;
   flex-direction: column;
+  width: 100%;
   height: fit-content;
 }
 
@@ -50,7 +51,6 @@ aside {
 .navigasi a {
   width: initial;
   text-decoration: none;
-  color: white;
   font-weight: 600;
   font-size: 20px;
   text-transform: uppercase;
