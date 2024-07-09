@@ -17,7 +17,7 @@
         background-color: #15172b;
         }
 
-        .form {
+        form {
         border-radius: 20px;
         box-sizing: border-box;
         height: fit-content;
@@ -249,59 +249,113 @@
         }
 
         @media screen and (max-width: 600px) {
-        .form {
-            padding: 20px 20px 50px 20px;
+          form {
+              padding: 0px 20px 20px 20px;
+          }
         }
-        }
+
+        /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 300px;
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        background-color: #45a049;
+      }
     </style>
 </head>
 <body>
-    <div class="form">
+    <form class="form" id="form" name="submit-to-google-sheet">
       <div class="title">Welcome</div>
       <div class="subtitle">Register Yourself Soon!</div>
 
       <div class="input-container ic1">
-        <input placeholder="" type="text" class="input" id="email">
+        <input placeholder="" type="text" class="input" id="email" name="Email">
         <div class="cut"></div>
         <label class="iLabel" for="firstname">Email Address</label>
       </div>
 
       <div class="input-container ic2">
-        <input placeholder="" type="text" class="input" id="name">
+        <input placeholder="" type="text" class="input" id="name" name="Name">
         <div class="cut"></div>
         <label class="iLabel" for="lastname">Name</label>
       </div>
       <div class="input-container ic2">
-        <input placeholder="" type="text" class="input" id="major">
+        <input placeholder="" type="text" class="input" id="major" name="Major and Institution">
         <div class="cut cut-short"></div>
         <label class="iLabel" for="email">Major and Institution</label>
       </div>
       <div class="input-container ic2">
-        <input placeholder="" type="text" class="input" id="phone">
+        <input placeholder="" type="text" class="input" id="phone" name="Phone">
         <div class="cut"></div>
         <label class="iLabel" for="firstname">Phone</label>
       </div>
       <div class="input-container_radio ic2">
         <label class="iLabel_radio">Where did you hear about this geosphere event?</label>
         <div class="radio-container">
-          <input type="radio" id="ig" name="source" value="ig">
+          <input type="radio" id="ig" name="Source" value="ig">
           <label for="ig">Instagram</label><br>
-          <input type="radio" id="tiktok" name="source" value="tiktok">
+          <input type="radio" id="tiktok" name="Source" value="tiktok">
           <label for="tiktok">TikTok</label><br>
-          <input type="radio" id="geophysical-student" name="source" value="geophysical-engineering-student">
+          <input type="radio" id="geophysical-student" name="Source" value="Geophysical Engineering Student">
           <label for="geophysical-student">Geophysical Engineering Student</label>
-          <input type="text" id="student-name" name="student-name" placeholder="Enter name here">
+          <input type="text" id="student-name" name="Student Name" placeholder="Enter name here">
         </div>
       </div>
       <div class="input-container ic2">
-        <input placeholder="" type="text" class="input" id="drive">
+        <input placeholder="" type="text" class="input" id="drive" name="File">
         <div class="cut"></div>
         <label class="iLabel" for="firstname">Link Drive</label>
       </div>
       <p class="text-white pt-3 ps-2">*Note : link drive containing screenshot files of Proof of Geosphere Instagram Follow, Share Poster in 3 Groups, and Repost Poster on Snapgram*</p>
       <p class="text-white">Information about the poster is at this <a href="">link</a></p>
       <button class="submit" type="text">Submit</button>
-    </div>
+    </form>
     <div class="button-container" onclick="window.location.href = '/views/gtalk.html';">
       <button class="button-3d">
         <div class="button-top">
@@ -311,17 +365,64 @@
         <div class="button-base"></div>
       </button>
     </div>
+
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Your registration was successful!</p>
+        <p>Thank you for registering!</p>
+        <button class="button" onclick="goBack()">OK</button>
+      </div>
+    </div>
 </body>
 <script>
-document.querySelectorAll('input[name="source"]').forEach((elem) => {
-  elem.addEventListener('change', function() {
-    const studentNameField = document.getElementById('student-name');
-    if (document.getElementById('geophysical-student').checked) {
-      studentNameField.style.display = 'block';
-    } else {
-      studentNameField.style.display = 'none';
+    document.querySelectorAll('input[name="source"]').forEach((elem) => {
+      elem.addEventListener('change', function() {
+        const studentNameField = document.getElementById('student-name');
+        if (document.getElementById('geophysical-student').checked) {
+          studentNameField.style.display = 'block';
+        } else {
+          studentNameField.style.display = 'none';
+        }
+      });
+    });
+    
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzJH-p1ZvSjb2c35t4TePkfUE-M2Sf3RJeUSKrGIxP8tsv2idQye4bOD4__5S2KIIhNNA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const modal = document.getElementById("successModal")
+    const span = document.getElementsByClassName("close")[0]
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          console.log('Success!', response)
+          // Reset form inputs
+          form.reset()
+          // Display modal
+          modal.style.display = "flex"
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+
+    // Close modal when clicking on <span> (x)
+    span.onclick = function() {
+      modal.style.display = "none"
+      window.history.back()
     }
-  });
-});          
+
+    // Close modal when clicking anywhere outside of the modal
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none"
+        window.history.back()
+      }
+    }
+
+    // Function to go back to the previous page
+    function goBack() {
+      modal.style.display = "none"
+      window.history.back()
+    }
 </script>
 </html>
