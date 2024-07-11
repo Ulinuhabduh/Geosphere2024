@@ -447,24 +447,67 @@ td {
   background: transparent;
 }
 
+/* Narahubung */
+.contact-card {
+    background: transparent;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px #00BFA6;
+    padding: 20px 40px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.CP {
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact-info h3 {
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    color: #00BFA6;
+    text-decoration: underline;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
 footer {
     margin: 0;
     color: white;
 }
 
 .awal {
-    gap: 50px;
+  gap: 50px;
     display: flex;
     margin: 0px 80px;
+    justify-content: center;
 }
 
 .end {
   display: flex;
   margin: 0 80px;
-}
-
-.logo-new {
-    width: 200px;
 }
 
 @media screen and (max-width: 576px) {
@@ -563,12 +606,29 @@ footer {
   .content h2, p {
   font-size: 10px;
 
-}
+  }
+
+  .contact-card {
+    max-width: 300px;
+    padding: 10px 10px;
+
+  }
+
+  .contact-info h3 {
+      font-size: 1em;
+      margin-bottom: 20px;
+      color: #00BFA6;
+      text-decoration: underline;
+  }
+
+  .contact-info p {
+      margin: 5px 0;
+      font-size: 0.8em;
+  }
 
   footer {
     padding: 0;
     margin: 0;
-    /* background: #f1f1f1; */
   }
 
   .awal {
@@ -577,22 +637,7 @@ footer {
     margin: 0;
   }
 
-  .logo-footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .logo-new {
-    width: 120px;
-  }
-
   .end {
     margin: 0 10px;
-  }
-
-  .contact, .about, .event-1 {
-    display: none;
   }
 }
