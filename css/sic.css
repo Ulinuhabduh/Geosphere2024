@@ -255,6 +255,51 @@ p span {
     justify-content: center;
 }
 
+/* Narahubung */
+.contact-card {
+    background: transparent;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px #00BFA6;
+    padding: 20px 40px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.CP {
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact-info h3 {
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    color: #00BFA6;
+    text-decoration: underline;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
 
 footer {
     margin: 0;
@@ -364,6 +409,24 @@ footer {
   .prize {
     font-size: 1rem;
     padding: 5px;
+  }
+
+  .contact-card {
+    max-width: 300px;
+    padding: 10px 10px;
+
+  }
+
+  .contact-info h3 {
+      font-size: 1em;
+      margin-bottom: 20px;
+      color: #00BFA6;
+      text-decoration: underline;
+  }
+
+  .contact-info p {
+      margin: 5px 0;
+      font-size: 0.8em;
   }
 
   footer {
