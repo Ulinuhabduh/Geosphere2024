@@ -1,9 +1,9 @@
 document.getElementById("guidebook").addEventListener("click", function () {
   // URL file yang ingin diunduh
-  var fileUrl = "/";
+  var fileUrl = "/guidebook/Guidebook_GeoOlympic2024.pdf";
 
   // Nama file yang akan diberikan pada pengguna saat diunduh
-  var fileName = "Guidebook Geosphere 2024.pdf";
+  var fileName = "Guidebook GeoOlympic 2024.pdf";
 
   // Membuat elemen <a> untuk melakukan unduhan
   var link = document.createElement("a");
