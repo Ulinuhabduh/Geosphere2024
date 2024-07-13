@@ -39,7 +39,7 @@ aside {
 }
 
 #navigasi .navigasi:hover {
-  background: #fd8419;
+  /* background: #fd8419; */
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -57,7 +57,7 @@ aside {
 }
 
 .navigasi a:hover {
-  color: black;
+  color: white;
 }
 
 /* Main */

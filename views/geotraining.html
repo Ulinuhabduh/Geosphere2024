@@ -107,6 +107,10 @@
                 <th>Link to Page</th>
             </tr>
             <tr>
+                <td>Guidebook</td>
+                <td><button id="guidebook" class="btn fw-bold">Go!</button></td>
+            </tr>
+            <tr>
                 <td>Handbook</td>
                 <td><button onclick="window.location.href='file.html'" class="btn fw-bold">Go!</button></td>
             </tr>
@@ -194,7 +198,7 @@
           </div>
         </div>
 
-        <h1 class=" CP">Contact Person</h1>
+        <h1 class="CP">Contact Person</h1>
         <div class="contact-card">
             <div class="contact-info">
                 <h3>Head of Event</h3>
@@ -239,6 +243,31 @@
     ></script>
 
     <script>
+      document.getElementById("guidebook").addEventListener("click", function () {
+        // URL file yang ingin diunduh
+        var fileUrl = "/guidebook/Guidebook SIT 2024.pdf";
+
+        // Nama file yang akan diberikan pada pengguna saat diunduh
+        var fileName = "Guidebook SIT 2024.pdf";
+
+        // Membuat elemen <a> untuk melakukan unduhan
+        var link = document.createElement("a");
+
+        // Menetapkan atribut href ke URL file
+        link.href = fileUrl;
+
+        // Menetapkan atribut download ke nama file
+        link.download = fileName;
+
+        // Menambahkan elemen ke dalam dokumen
+        document.body.appendChild(link);
+
+        // Simulasi klik pada elemen <a> untuk memulai unduhan
+        link.click();
+
+        // Menghapus elemen <a> setelah unduhan selesai
+        document.body.removeChild(link);
+      });
       // Fungsi untuk membuka tab baru
       function openNewTab(url) {
           window.open(url, '_blank');
