@@ -1,6 +1,6 @@
 document.getElementById("guidebook").addEventListener("click", function () {
   // URL file yang ingin diunduh
-  var fileUrl = "/guidebook/Guidebook SIC 2024.pdf";
+  var fileUrl = "/guidebook/GUIDEBOOK SIC 2024.pdf";
 
   // Nama file yang akan diberikan pada pengguna saat diunduh
   var fileName = "Guidebook SIC 2024.pdf";
