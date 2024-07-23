@@ -247,11 +247,6 @@
           border-radius: 10px 10px 8px 8px / 8px;
         }
 
-        @media screen and (max-width: 600px) {
-          form {
-              padding: 0px 20px 20px 20px;
-          }
-        }
         /* Modal styles */
       .modal {
         display: none;
@@ -304,6 +299,75 @@
 
       .button:hover {
         background-color: #45a049;
+      }
+
+      .loader {
+        display: none;
+        z-index: 1;
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border-top: 5px solid #e74c3c;
+        position: fixed;
+        animation: load 2s linear infinite;
+        left: 45%;
+        top: 45%;
+      }
+
+      .loader::before,.loader::after {
+        content: '';
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        border-radius: 50%;
+      }
+
+      .loader::before {
+        border-top: 5px solid #e67e22;
+        transform: rotate(120deg);
+      }
+
+      .loader::after {
+        border-top: 5px solid #3498db;
+        transform: rotate(240deg);
+      }
+
+      .loader span {
+        position: absolute;
+        font-size: small;
+        width: 100px;
+        height: 100px;
+        color: #fff;
+        text-align: center;
+        line-height: 100px;
+        animation: a2 2s linear infinite;
+      }
+
+      @media screen and (max-width: 600px) {
+          form {
+              padding: 0px 20px 20px 20px;
+          }
+
+          .loader {
+            left: 35%;
+            top: 35%;
+          }
+        }
+
+      @keyframes load {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes a2 {
+        to {
+          transform: rotate(-360deg);
+        }
       }
     </style>
 </head>
@@ -372,6 +436,10 @@
         <button class="button" onclick="goBack()">OK</button>
       </div>
     </div>
+
+    <div id="loader" class="loader">
+          <span>Loading...</span>
+    </div>
 </body>
 <script>
   document.querySelectorAll('input[name="source"]').forEach((elem) => {
@@ -391,17 +459,38 @@
     const span = document.getElementsByClassName("close")[0]
 
     form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-          console.log('Success!', response)
-          // Reset form inputs
-          form.reset()
-          // Display modal
-          modal.style.display = "flex"
-        })
-        .catch(error => console.error('Error!', error.message))
+    e.preventDefault();
+
+    // Tampilkan loader
+    loader.style.display = 'flex';
+
+    // Kirim data form menggunakan fetch
+    fetch(scriptURL, { 
+        method: 'POST', 
+        body: new FormData(form)
     })
+    .then(response => response.json()) // Parsing JSON untuk respons
+    .then(data => {
+        console.log('Success!', data);
+        // Reset form inputs
+        form.reset();
+
+        // Sembunyikan loader
+        loader.style.display = 'none';
+
+        // Tampilkan modal
+        modal.style.display = 'flex';
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+
+        // Sembunyikan loader
+        loader.style.display = 'none';
+
+        // Mungkin menampilkan pesan error kepada pengguna
+        alert('There was an error submitting your form. Please try again.');
+    });
+});
 
     // Close modal when clicking on <span> (x)
     span.onclick = function() {
