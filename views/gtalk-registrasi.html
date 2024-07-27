@@ -415,6 +415,7 @@
         <input placeholder="" type="text" class="input" id="drive" name="File" required>
         <div class="cut"></div>
         <label class="iLabel" for="firstname">Link Drive</label>
+        <span id="drive-error" style="color: red; display: none;">Please enter a valid Google Drive link.</span>
       </div>
       <p class="text-white pt-3 ps-2">*Note : link drive containing screenshot files of Proof of Geosphere Instagram Follow, Share Poster in 3 Groups, and Repost Poster on Snapgram*</p>
       <p class="text-white">Information about the poster is at this <a href="https://drive.google.com/drive/folders/157uBuBEC_ro_eEbNjTS9G79Ds-8SZn90?usp=sharing" target="_blank">link</a></p>
@@ -435,7 +436,7 @@
       <div class="modal-content">
         <p>Your registration was successful!</p>
         <p>Thank you for registering!</p>
-        <button class="button" onclick="goBack()"><a href="https://chat.whatsapp.com/G9RQTzJegWd15YDSXiONTJ " target="_blank" class="text-white text-decoration-none">Go to Grup</a></button>
+        <a href="https://chat.whatsapp.com/G9RQTzJegWd15YDSXiONTJ " target="_blank" class="text-white text-decoration-none"><button class="button" onclick="goBack()">Go to Grup</button></a>
       </div>
     </div>
 
@@ -444,6 +445,12 @@
     </div>
 </body>
 <script>
+
+    function isValidDriveLink(url) {
+        const driveLinkPattern = /^https:\/\/drive\.google\.com\/(file\/d\/|open\?id=|drive\/folders\/)/;
+        return driveLinkPattern.test(url);
+    }
+
     document.querySelectorAll('input[name="source"]').forEach((elem) => {
       elem.addEventListener('change', function() {
         const studentNameField = document.getElementById('student-name');
@@ -459,40 +466,50 @@
     const form = document.forms['submit-to-google-sheet']
     const modal = document.getElementById("successModal")
     const span = document.getElementsByClassName("close")[0]
+    const driveInput = document.getElementById("drive");
+    const driveError = document.getElementById("drive-error");
 
     form.addEventListener('submit', e => {
-    e.preventDefault();
+        e.preventDefault();
 
-    // Tampilkan loader
-    loader.style.display = 'flex';
+        // Validate Google Drive link
+        if (!isValidDriveLink(driveInput.value)) {
+            driveError.style.display = 'block';
+            return; // Stop form submission if the link is invalid
+        } else {
+            driveError.style.display = 'none';
+        }
 
-    // Kirim data form menggunakan fetch
-    fetch(scriptURL, { 
-        method: 'POST', 
-        body: new FormData(form)
-    })
-    .then(response => response.json()) // Parsing JSON untuk respons
-    .then(data => {
-        console.log('Success!', data);
-        // Reset form inputs
-        form.reset();
+        // Display loader
+        loader.style.display = 'flex';
 
-        // Sembunyikan loader
-        loader.style.display = 'none';
+        // Submit form data using fetch
+        fetch(scriptURL, {
+            method: 'POST',
+            body: new FormData(form)
+        })
+        .then(response => response.json()) // Parsing JSON for the response
+        .then(data => {
+            console.log('Success!', data);
+            // Reset form inputs
+            form.reset();
 
-        // Tampilkan modal
-        modal.style.display = 'flex';
-    })
-    .catch(error => {
-        console.error('Error!', error.message);
+            // Hide loader
+            loader.style.display = 'none';
 
-        // Sembunyikan loader
-        loader.style.display = 'none';
+            // Display modal
+            modal.style.display = 'flex';
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
 
-        // Mungkin menampilkan pesan error kepada pengguna
-        alert('There was an error submitting your form. Please try again.');
+            // Hide loader
+            loader.style.display = 'none';
+
+            // Possibly display an error message to the user
+            alert('There was an error submitting your form. Please try again.');
+        });
     });
-  });
 
     // Close modal when clicking on <span> (x)
     span.onclick = function() {
